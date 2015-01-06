@@ -11,8 +11,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Target;
 
 /**
- *
- * @author anonymous
+ * @author redcrow
  */
 @Target(ElementType.FIELD)
 @Retention(RUNTIME)
