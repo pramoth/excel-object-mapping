@@ -80,8 +80,8 @@ public class ExOM {
             @Override
             public void each(Field field, String name) throws Throwable {
                 ReflectionUtils.setValueOnField(instance, field, getValueByName(
-                        name, 
-                        row, 
+                        name,
+                        row,
                         cells
                 ));
             }
@@ -135,11 +135,8 @@ public class ExOM {
         Iterator<Cell> iterator = row.cellIterator();
         while (iterator.hasNext()) {
             Cell cell = iterator.next();
-            Object cellValue = getCellValue(cell);
-            if (cellValue instanceof String) {
-                if (((String) cellValue).trim().contains(name)) {
-                    return cell.getColumnIndex();
-                }
+            if (getCellValue(cell).trim().equalsIgnoreCase(name)) {
+                return cell.getColumnIndex();
             }
         }
 
