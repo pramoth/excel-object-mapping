@@ -37,7 +37,7 @@ public class ReflectionUtils {
                         instance,
                         entry.getValue().convert(
                                 value,
-                                column == null ? null : column.datePattern()
+                                column == null ? null : column.pattern()
                         )
                 );
             }

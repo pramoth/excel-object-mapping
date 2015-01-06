@@ -17,5 +17,5 @@ public @interface Column {
 
     String name() default "";
 
-    String datePattern() default "yyyy-MM-ddd";
+    String pattern() default "";
 }

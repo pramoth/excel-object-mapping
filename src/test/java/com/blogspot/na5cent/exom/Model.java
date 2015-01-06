@@ -16,7 +16,7 @@ public class Model {
     @Column(name = "last name")
     private String lastName;
     private Integer age;
-    @Column(name = "birth date", datePattern = "dd/MM/yyyy")
+    @Column(name = "birth date", pattern = "dd/MM/yyyy")
     private Date birthdate;
 
     public String getFistName() {
