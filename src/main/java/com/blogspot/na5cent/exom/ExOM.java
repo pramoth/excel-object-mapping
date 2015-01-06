@@ -58,7 +58,7 @@ public class ExOM {
         }
     }
 
-    private void readTitle(final Row row, final Map<String, Integer> cells) throws Throwable {
+    private void readExcelHeader(final Row row, final Map<String, Integer> cells) throws Throwable {
         ReflectionUtils.eachFields(clazz, new EachFieldCallback() {
 
             @Override
@@ -68,7 +68,7 @@ public class ExOM {
         });
     }
 
-    private Object readValue(final Row row, final Map<String, Integer> cells) throws Throwable {
+    private Object readExcelValue(final Row row, final Map<String, Integer> cells) throws Throwable {
         final Object instance = clazz.newInstance();
         ReflectionUtils.eachFields(clazz, new EachFieldCallback() {
 
@@ -108,9 +108,9 @@ public class ExOM {
                 while (rowIterator.hasNext()) {
                     Row row = rowIterator.next();
                     if (row.getRowNum() == 0) {
-                        readTitle(row, cells);
+                        readExcelHeader(row, cells);
                     } else if (row.getRowNum() > 0) {
-                        items.add((T) readValue(row, cells));
+                        items.add((T) readExcelValue(row, cells));
                     }
                 }
             }
