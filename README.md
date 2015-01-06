@@ -26,7 +26,7 @@ Model.java
 ```java
 public class Model {
 
-    @Column(name = "first name")
+    @Column(name = "first name") //must sam excel header
     private String fistName;
     @Column(name = "last name")
     private String lastName;
