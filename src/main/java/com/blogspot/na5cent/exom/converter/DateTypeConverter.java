@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * code https://github.com/jittagornp/excel-object-mapping
  */
 package com.blogspot.na5cent.exom.converter;
 
@@ -18,8 +16,6 @@ import org.slf4j.LoggerFactory;
 public class DateTypeConverter implements TypeConverter<Date> {
 
     private static final Logger LOG = LoggerFactory.getLogger(DateTypeConverter.class);
-
-    ;
 
     @Override
     public Date convert(Object value, String... pattern) {
