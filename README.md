@@ -31,7 +31,7 @@ public class Model {
     @Column(name = "last name")
     private String lastName;
     private Integer age; //use wrapper class only (*** not primitive type)
-    @Column(name = "birth date", datePattern = "dd/MM/yyyy")
+    @Column(name = "birth date", pattern = "dd/MM/yyyy")
     private Date birthdate;
 
     ...
