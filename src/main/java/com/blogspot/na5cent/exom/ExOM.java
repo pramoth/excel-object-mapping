@@ -73,7 +73,7 @@ public class ExOM {
         });
     }
 
-    private Object readExcelValue(final Row row, final Map<String, Integer> cells) throws Throwable {
+    private Object readExcelContent(final Row row, final Map<String, Integer> cells) throws Throwable {
         final Object instance = clazz.newInstance();
         ReflectionUtils.eachFields(clazz, new EachFieldCallback() {
 
@@ -112,13 +112,13 @@ public class ExOM {
                 Sheet sheet = workbook.getSheetAt(index);
                 rowIterator = sheet.iterator();
 
-                Map<String, Integer> cells = new HashMap<>();
+                Map<String, Integer> nameIndexMap = new HashMap<>();
                 while (rowIterator.hasNext()) {
                     Row row = rowIterator.next();
                     if (row.getRowNum() == 0) {
-                        readExcelHeader(row, cells);
-                    } else if (row.getRowNum() > 0) {
-                        items.add((T) readExcelValue(row, cells));
+                        readExcelHeader(row, nameIndexMap);
+                    } else {
+                        items.add((T) readExcelContent(row, nameIndexMap));
                     }
                 }
             }
