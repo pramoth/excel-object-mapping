@@ -18,6 +18,7 @@ public class TypeConverters {
         converter = new HashMap<>();
         converter.put(String.class, new StringTypeConverter());
         converter.put(Integer.class, new IntegerTypeConverter());
+        converter.put(Double.class, new DoubleTypeConverter());
         converter.put(Boolean.class, new BooleanTypeConverter());
         converter.put(Date.class, new DateTypeConverter());
     }

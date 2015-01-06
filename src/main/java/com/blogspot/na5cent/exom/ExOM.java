@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -20,11 +21,15 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author redcrow
  */
 public class ExOM {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ExOM.class);
 
     private final File excelFile;
     private Class clazz;
@@ -42,7 +47,7 @@ public class ExOM {
         return this;
     }
 
-    private Object getValueByName(String name, Row row, Map<String, Integer> cells) {
+    private String getValueByName(String name, Row row, Map<String, Integer> cells) {
         if (cells.get(name) == null) {
             return null;
         }
@@ -74,8 +79,11 @@ public class ExOM {
 
             @Override
             public void each(Field field, String name) throws Throwable {
-                Object value = getValueByName(name, row, cells);
-                ReflectionUtils.setValueOnField(instance, field, value);
+                ReflectionUtils.setValueOnField(instance, field, getValueByName(
+                        name, 
+                        row, 
+                        cells
+                ));
             }
         });
 
@@ -138,21 +146,21 @@ public class ExOM {
         return -1;
     }
 
-    private Object getCellValue(Cell cell) {
+    private String getCellValue(Cell cell) {
         if (cell == null) {
             return null;
         }
 
-        Object value = null;
+        String value = "";
         switch (cell.getCellType()) {
             case Cell.CELL_TYPE_BOOLEAN:
-                value = cell.getBooleanCellValue();
+                value += String.valueOf(cell.getBooleanCellValue());
                 break;
             case Cell.CELL_TYPE_NUMERIC:
-                value = cell.getNumericCellValue();
+                value += new BigDecimal(cell.getNumericCellValue()).toString();
                 break;
             case Cell.CELL_TYPE_STRING:
-                value = cell.getStringCellValue();
+                value += cell.getStringCellValue();
                 break;
         }
 
