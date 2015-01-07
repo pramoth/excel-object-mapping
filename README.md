@@ -26,7 +26,7 @@ Model.java
 ```java
 public class Model {
 
-    @Column(name = "first name") //must same excel header
+    @Column(name = "first name") //must same excel header (first row)
     private String fistName;
     @Column(name = "last name")
     private String lastName;
