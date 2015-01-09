@@ -4,7 +4,7 @@
 
     <groupId>com.blogspot.na5cent</groupId>
     <artifactId>excel-object-mapping</artifactId>
-    <version>1.0-SNAPSHORT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>excel-object-mapping</name>
@@ -20,12 +20,39 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4.2</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-gitexe</artifactId>
+                        <version>1.8.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+    <scm>
+        <connection>scm:git:https://pramoth@github.com/pramoth/excel-object-mapping.git</connection>
+        <developerConnection>scm:git:https://pramoth@github.com/pramoth/excel-object-mapping.git</developerConnection>
+        <url>https://pramoth@github.com/pramoth/excel-object-mapping.git</url>
+        <tag>HEAD</tag>
+    </scm>
+    <distributionManagement>
+        <repository>
+            <id>Geniustree Release</id>
+            <url>http://192.168.1.126:8088/nexus/content/repositories/geniustree/</url>
+        </repository>
+        <snapshotRepository>
+            <id>Geniustree Snapshots</id>
+            <url>http://192.168.1.126:8088/nexus/content/repositories/GeniustreeSnapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <developers>
         <developer>
             <id>redcrow</id>
