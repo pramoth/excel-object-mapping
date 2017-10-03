@@ -1,6 +1,3 @@
-/*
- * code https://github.com/jittagornp/excel-object-mapping
- */
 package com.blogspot.na5cent.exom;
 
 import com.blogspot.na5cent.exom.util.EachFieldCallback;

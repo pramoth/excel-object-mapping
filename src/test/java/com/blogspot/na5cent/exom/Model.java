@@ -15,7 +15,7 @@ public class Model {
     private String fistName;
     @Column(name = "last name")
     private String lastName;
-    private Integer age;
+    private Integer age; // Wrapper only
     @Column(name = "birth date", pattern = "dd/MM/yyyy")
     private Date birthdate;
 
