@@ -5,46 +5,53 @@ package com.blogspot.na5cent.exom.converter;
 
 import java.math.BigDecimal;
 
+import com.google.common.base.Optional;
+
 /**
- * @author redcrow
+ * Implements the TypeConverter interface and the method convert is only called when a boolena value 
+ * is encountered
+ * @author edwin.njeru
+ *
  */
 public class BooleanTypeConverter implements TypeConverter<Boolean> {
-
-    @Override
-    public Boolean convert(Object value, String... pattern) {
-        if (value == null) {
-            return Boolean.FALSE;
-        }
-
-        if (value instanceof Boolean) {
-            return (Boolean) value;
-        }
-
-        if (value instanceof Integer) {
-            try {
-                value = value.toString().trim();
-            } catch (Exception ex) {
-                return Boolean.FALSE;
-            }
-        }
-
-        if (value instanceof String) {
-            try {
-                value = BigDecimal.valueOf(Long.parseLong(((String) value).trim()));
-            } catch (Exception ex) {
-                return Boolean.FALSE;
-            }
-        }
-
-        if (value instanceof BigDecimal) {
-            BigDecimal bd = (BigDecimal) value;
-            int intValue = bd.intValue();
-            return intValue == 1
-                    ? Boolean.TRUE
-                    : Boolean.FALSE;
-        }
-
-        return Boolean.FALSE;
-    }
-
+	
+	
+	/**
+	 * Converts value to boolean
+	 * @param value
+	 * @param pattern
+	 * @return Boolean value
+	 */
+	@Override
+	public Boolean convert(final Optional<Object> value, final String... pattern) {
+		
+		Object booleanObject = value.get();
+		
+		if (booleanObject instanceof Boolean) { return (Boolean) booleanObject; }
+		
+		if (booleanObject instanceof Integer) {
+			try {
+				booleanObject = booleanObject.toString().trim();
+			} catch (final Exception ex) {
+				return Boolean.FALSE;
+			}
+		}
+		
+		if (booleanObject instanceof String) {
+			try {
+				booleanObject = BigDecimal.valueOf(Long.parseLong(((String) booleanObject).trim()));
+			} catch (final Exception ex) {
+				return Boolean.FALSE;
+			}
+		}
+		
+		if (booleanObject instanceof BigDecimal) {
+			final BigDecimal bd = (BigDecimal) booleanObject;
+			final int intValue = bd.intValue();
+			return intValue == 1 ? Boolean.TRUE : Boolean.FALSE;
+		}
+		
+		return Boolean.FALSE;
+	}
+	
 }
