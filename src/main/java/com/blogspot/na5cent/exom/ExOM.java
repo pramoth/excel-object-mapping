@@ -90,12 +90,14 @@ public class ExOM {
     public <T> List<T> map() throws Throwable {
         InputStream inputStream = null;
         List<T> items = new ArrayList<>();
+        
+        Workbook workbook = null;
 
         try {
             Iterator<Row> rowIterator;
             inputStream = new FileInputStream(excelFile);
             int numberOfSheets;
-            Workbook workbook;
+            
 
             if (excelFile.getName().endsWith(".xls")) {
                 workbook = new HSSFWorkbook(inputStream);
@@ -123,6 +125,8 @@ public class ExOM {
             if (inputStream != null) {
                 inputStream.close();
             }
+            
+            if(workbook != null) workbook.close();
         }
 
         return items;
