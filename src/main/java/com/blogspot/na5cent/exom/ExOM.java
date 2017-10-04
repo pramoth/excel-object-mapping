@@ -221,12 +221,12 @@ public class ExOM {
 			
 		} catch (IOException e) {
 			
-			log.error("{} Exception caused by {}, Occuring at : {} while trying to read excel file",
+			log.error("{} Exception caused by : {}, Occuring at : {} while trying to read excel file",
 					e.getMessage(),e.getCause(),e.getStackTrace());
 			
 		} catch (Exception e) {
 			
-			log.error("{} Exception caused by {}, Occuring at : {} while trying to read excel file",
+			log.error("{} Exception caused by : {}, Occuring at : {} while trying to read excel file",
 					e.getMessage(),e.getCause(),e.getStackTrace());
 
 		} finally {
@@ -234,7 +234,7 @@ public class ExOM {
 				try {
 					inputStream.close();
 				} catch (IOException e) {
-					log.error("{} Exception caused by {}, Occuring at : {} while trying to close the inputStream",
+					log.error("{} Exception caused by: {}, Occuring at : {} while trying to close the inputStream",
 							e.getMessage(),e.getCause(),e.getStackTrace());
 
 				}
@@ -244,7 +244,7 @@ public class ExOM {
 				try {
 					workbook.close();
 				} catch (IOException e) {
-					log.error("{} Exception caused by {}, Occuring at : {} while trying to close the workbook",
+					log.error("{} Exception caused by : {}, Occuring at : {} while trying to close the workbook",
 							e.getMessage(),e.getCause(),e.getStackTrace());
 
 				}

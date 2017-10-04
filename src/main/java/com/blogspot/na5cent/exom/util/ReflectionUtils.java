@@ -84,7 +84,7 @@ public class ReflectionUtils {
 					LOG.trace("Invoking method : {} with args : {} and entry : {}",method.getName(),instance.toString(),entry.getValue());
 					
 					method.invoke(instance,
-							entry.getValue().convert(Optional.of(value), column == null ? null : column.pattern()));
+							entry.getValue().convert(Optional.fromNullable(value), column == null ? null : column.pattern()));
 				} catch (IllegalAccessException e) {
 					LOG.error("{} Exception caused by {} Ocurring at {} when invoking method : {}",
 							e.getMessage(),e.getCause(),e.getStackTrace(),method.getName());
@@ -112,8 +112,7 @@ public class ReflectionUtils {
 			for (final Field field : fields) {
 				
 				try {
-					callback.each(
-							field, 
+					callback.each(field, 
 							field.isAnnotationPresent(ExcelColumn.class) ? field.getAnnotation(ExcelColumn.class).name() : field.getName());
 				} catch (Throwable e) {
 					
