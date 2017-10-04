@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/ghacupha/excel-object-mapping.svg?branch=master)](https://travis-ci.org/ghacupha/excel-object-mapping)
+
+
 - Clone this project to your computer<br/>
 - Build project by maven
 

@@ -9,6 +9,6 @@ import java.lang.reflect.Field;
  * @author redcrow
  */
 public interface EachFieldCallback {
-
-    void each(Field field, String name) throws Throwable;
+	
+	void each(Field field, String name) throws Throwable;
 }
