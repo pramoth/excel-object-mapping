@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 
 import com.google.common.base.Optional;
 
+
 /**
  * Implements the TypeConverter interface and the method convert is only called when a boolena value 
  * is encountered
@@ -25,7 +26,9 @@ public class BooleanTypeConverter implements TypeConverter<Boolean> {
 	@Override
 	public Boolean convert(final Optional<Object> value, final String... pattern) {
 		
-		Object booleanObject = value.get();
+		Object booleanObject = null;
+		
+		if(value.isPresent()) booleanObject = value.get();
 		
 		if (booleanObject instanceof Boolean) { return (Boolean) booleanObject; }
 		

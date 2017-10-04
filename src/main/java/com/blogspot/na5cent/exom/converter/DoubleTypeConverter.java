@@ -30,7 +30,9 @@ public class DoubleTypeConverter implements TypeConverter<Double> {
 	@Override
 	public Double convert(final Optional<Object> doubleObject, final String... pattern) {
 		
-		final Object value = doubleObject.get();
+		Object value = null;
+		
+		if(doubleObject.isPresent()) value = doubleObject.get();
 		
 		if (value instanceof Double) { return (Double) value; }
 		

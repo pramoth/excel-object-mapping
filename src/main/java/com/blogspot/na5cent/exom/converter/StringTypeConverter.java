@@ -20,7 +20,9 @@ public class StringTypeConverter implements TypeConverter<String> {
 	@Override
 	public String convert(final Optional<Object> stringObject, final String... pattern) {
 		
-		final Object value = stringObject.get();
+		Object value = null;
+		
+		if(stringObject.isPresent()) value = stringObject.get();
 		
 		if (value instanceof String) { return ((String) value).trim(); }
 		

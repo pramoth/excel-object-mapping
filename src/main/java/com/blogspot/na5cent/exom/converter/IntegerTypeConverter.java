@@ -27,7 +27,9 @@ public class IntegerTypeConverter implements TypeConverter<Integer> {
 	@Override
 	public Integer convert(final Optional<Object> rawInteger, final String... pattern) {
 		
-		final Object value = rawInteger.get();
+		Object value = null;
+		
+		if(rawInteger.isPresent()) value = rawInteger.get();
 		
 		if (value instanceof Integer) { return (Integer) value; }
 		

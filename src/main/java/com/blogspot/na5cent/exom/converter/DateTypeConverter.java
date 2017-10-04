@@ -33,7 +33,9 @@ public class DateTypeConverter implements TypeConverter<Date> {
 	@Override
 	public Date convert(final Optional<Object> value, final String... pattern) {
 		
-		final Object convertible = value.get();
+		Object convertible = null;
+		
+		if(value.isPresent()) convertible = value.get();
 		
 		LOG.trace("Convert has been called with args {} and {}", convertible, pattern);
 		
