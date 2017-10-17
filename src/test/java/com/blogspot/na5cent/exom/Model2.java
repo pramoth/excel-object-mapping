@@ -3,30 +3,18 @@
  */
 package com.blogspot.na5cent.exom;
 
-import com.blogspot.na5cent.exom.annotation.Column;
 import java.util.Date;
 
 /**
- * @author redcrow
  * @author Mohsen.Mahmoudi
  */
-public class Model {
+public class Model2 {
 
-	@Column(name = "first name")
 	private String fistName;
-
-	@Column(name = "last name")
 	private String lastName;
-
 	private Integer age;
-
-	@Column(name = "birth date", pattern = "dd/MM/yyyy")
 	private Date birthdate;
-
-	@Column(index = 4)
 	private String fatherName;
-
-	@Column(index = 5)
 	private Boolean iq;
 
 	public String getFistName() {

@@ -27,7 +27,6 @@ public class TypeConverters {
         if (converter == null) {
             registerConverter();
         }
-
         return converter;
     }
 }
