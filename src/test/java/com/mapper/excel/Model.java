@@ -1,10 +1,11 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom;
+package com.mapper.excel;
 
-import com.blogspot.na5cent.exom.annotation.Column;
 import java.util.Date;
+
+import com.mapper.excel.annotation.Column;
 
 /**
  * @author redcrow

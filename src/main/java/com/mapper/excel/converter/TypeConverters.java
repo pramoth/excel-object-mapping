@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom.converter;
+package com.mapper.excel.converter;
 
 import java.util.Date;
 import java.util.HashMap;

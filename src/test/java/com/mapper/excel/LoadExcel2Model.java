@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom;
+package com.mapper.excel;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,7 +17,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.blogspot.na5cent.exom.util.WorkbookCallback;
+import com.mapper.excel.ExcelMapper;
+import com.mapper.excel.util.WorkbookCallback;
 
 /**
  * @author redcrow

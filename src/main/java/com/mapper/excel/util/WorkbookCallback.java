@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom.util;
+package com.mapper.excel.util;
 
 import org.apache.poi.ss.usermodel.Workbook;
 
