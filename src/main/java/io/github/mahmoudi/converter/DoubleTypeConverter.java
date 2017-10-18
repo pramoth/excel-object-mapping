@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom.converter;
+package io.github.mahmoudi.converter;
 
 import java.math.BigDecimal;
 import org.slf4j.Logger;
@@ -25,12 +25,12 @@ public class DoubleTypeConverter implements TypeConverter<Double> {
         }
 
         if (value instanceof String) {
-            try {
+            //try {
                 return Double.valueOf(((String) value).trim());
-            } catch (Exception ex) {
-                LOG.warn(null, ex);
-                return null;
-            }
+            //} catch (Exception ex) {
+            //   LOG.warn(null, ex);
+            //    return null;
+            //}
         }
 
         if (value instanceof BigDecimal) {

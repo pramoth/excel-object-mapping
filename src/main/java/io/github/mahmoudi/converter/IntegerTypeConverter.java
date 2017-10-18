@@ -1,9 +1,10 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom.converter;
+package io.github.mahmoudi.converter;
 
 import java.math.BigDecimal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,12 +26,12 @@ public class IntegerTypeConverter implements TypeConverter<Integer> {
         }
 
         if (value instanceof String) {
-            try {
+            //try {
                 return Integer.valueOf(((String) value).trim());
-            } catch (Exception ex) {
-                LOG.warn(null, ex);
-                return null;
-            }
+            //} catch (Exception ex) {
+            //    LOG.warn(null, ex);
+            //    return null;
+            //}
         }
 
         if (value instanceof BigDecimal) {

@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom.converter;
+package io.github.mahmoudi.converter;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

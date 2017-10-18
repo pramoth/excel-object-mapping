@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.blogspot.na5cent.exom.converter;
+package io.github.mahmoudi.converter;
 
 import java.math.BigDecimal;
 
@@ -21,19 +21,25 @@ public class BooleanTypeConverter implements TypeConverter<Boolean> {
         }
 
         if (value instanceof Integer) {
-            try {
+            //try {
                 value = value.toString().trim();
-            } catch (Exception ex) {
-                return Boolean.FALSE;
-            }
+            //} catch (Exception ex) {
+                //return Boolean.FALSE;
+            //}
         }
 
         if (value instanceof String) {
-            try {
-                value = BigDecimal.valueOf(Long.parseLong(((String) value).trim()));
-            } catch (Exception ex) {
-                return Boolean.FALSE;
-            }
+            //try {
+			if (((String) value).trim().equals("false")) {
+				return Boolean.FALSE;
+			} else if (((String) value).trim().equals("true")) {
+				return Boolean.TRUE;
+			} else {
+				value = BigDecimal.valueOf(Long.parseLong(((String) value).trim()));
+			}
+            //} catch (Exception ex) {
+                //return Boolean.FALSE;
+            //}
         }
 
         if (value instanceof BigDecimal) {
