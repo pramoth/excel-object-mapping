@@ -1,9 +1,9 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.mapper.excel.util;
+package io.github.mahmoudi.util;
 
-import static com.mapper.excel.util.CollectionUtils.isEmpty;
+import static io.github.mahmoudi.util.CollectionUtils.isEmpty;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -12,9 +12,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mapper.excel.annotation.Column;
-import com.mapper.excel.converter.TypeConverter;
-import com.mapper.excel.converter.TypeConverters;
+import io.github.mahmoudi.annotation.Column;
+import io.github.mahmoudi.converter.TypeConverter;
+import io.github.mahmoudi.converter.TypeConverters;
 
 /**
  * @author redcrow

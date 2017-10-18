@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.github.mohsen-mahmoudi</groupId>
+	<groupId>io.github.mahmoudi</groupId>
 	<artifactId>excel-object-mapping</artifactId>
 	<version>1.0.0-releases</version>
 	<packaging>jar</packaging>

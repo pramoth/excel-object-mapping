@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.mapper.excel.util;
+package io.github.mahmoudi.util;
 
 import java.util.Collection;
 

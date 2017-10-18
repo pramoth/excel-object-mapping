@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.mapper.excel;
+package io.github.mahmoudi;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -24,9 +24,9 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mapper.excel.util.EachFieldCallback;
-import com.mapper.excel.util.ReflectionUtils;
-import com.mapper.excel.util.WorkbookCallback;
+import io.github.mahmoudi.util.EachFieldCallback;
+import io.github.mahmoudi.util.ReflectionUtils;
+import io.github.mahmoudi.util.WorkbookCallback;
 
 /**
  * @author redcrow

@@ -1,7 +1,7 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.mapper.excel.annotation;
+package io.github.mahmoudi.annotation;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 

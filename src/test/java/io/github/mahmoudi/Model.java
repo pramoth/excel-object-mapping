@@ -1,20 +1,33 @@
 /*
  * code https://github.com/jittagornp/excel-object-mapping
  */
-package com.mapper.excel;
+package io.github.mahmoudi;
 
 import java.util.Date;
 
+import io.github.mahmoudi.annotation.Column;
+
 /**
+ * @author redcrow
  * @author Mohsen.Mahmoudi
  */
-public class Model2 {
+public class Model {
 
+	@Column(name = "first name")
 	private String fistName;
+
+	@Column(name = "last name")
 	private String lastName;
+
 	private Integer age;
+
+	@Column(name = "birth date", pattern = "dd/MM/yyyy")
 	private Date birthdate;
+
+	@Column(index = 4)
 	private String fatherName;
+
+	@Column(index = 5)
 	private Boolean iq;
 
 	public String getFistName() {
